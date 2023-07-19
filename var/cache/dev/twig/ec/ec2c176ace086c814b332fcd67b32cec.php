@@ -141,6 +141,6 @@ class __TwigTemplate_e13cb847d0211fbf0bb51aa558655e33 extends Template
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\filtration.html.twig");
     }
 }

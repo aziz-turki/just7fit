@@ -330,6 +330,6 @@ class __TwigTemplate_b9a89e32b45c5fa164e917f353c520da extends Template
     {% endif %}
 
 {% endblock %}
-", "@WebProfiler/Profiler/results.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\results.html.twig");
+", "@WebProfiler/Profiler/results.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\results.html.twig");
     }
 }

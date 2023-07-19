@@ -133,6 +133,6 @@ class __TwigTemplate_bee41ad8f53fcd04830b064c3a58a371 extends Template
     </p>
     <p>If you don't receive an email please check your spam folder or <a href=\"{{ path('app_forgot_password_request') }}\">try again</a>.</p>
 {% endblock %}
-", "reset_password/check_email.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\reset_password\\check_email.html.twig");
+", "reset_password/check_email.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\reset_password\\check_email.html.twig");
     }
 }

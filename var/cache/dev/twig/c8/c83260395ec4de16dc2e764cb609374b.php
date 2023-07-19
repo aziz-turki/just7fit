@@ -233,6 +233,6 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         {% endblock %}
         <script src=\"{{ asset('js/scripts.js') }}\"></script>
     </body>
-</html>", "base.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\base.html.twig");
+</html>", "base.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\base.html.twig");
     }
 }

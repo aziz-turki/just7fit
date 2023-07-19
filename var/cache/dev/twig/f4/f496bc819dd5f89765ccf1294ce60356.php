@@ -479,6 +479,6 @@ class __TwigTemplate_b0e3e850e162897df5e1916d2fb2fa08 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\validator.html.twig");
     }
 }

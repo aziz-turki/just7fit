@@ -49,7 +49,9 @@ class UserType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'required' => true,
+                'data' => ['client'], // Définir 'client' comme valeur par défaut
             ])
+            
             ->add('password', HiddenType::class, [
                 'data' => 'password',
             ]);

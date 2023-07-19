@@ -364,11 +364,25 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ApiController"/>
       </call>
     </service>
+    <service id="App\Controller\CoachController" class="App\Controller\CoachController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\CoachController"/>
+      </call>
+    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\HomeController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ProduitController" class="App\Controller\ProduitController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ProduitController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -404,6 +418,12 @@
     <service id="App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CoachType" class="App\Form\CoachType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ProduitType" class="App\Form\ProduitType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -414,6 +434,14 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\rekaptcha" class="App\Form\rekaptcha" autowire="true" autoconfigure="true"/>
+    <service id="App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProduitRepository" class="App\Repository\ProduitRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1206,6 +1234,8 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\ChangePasswordFormType</argument>
+        <argument>App\Form\CoachType</argument>
+        <argument>App\Form\ProduitType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>App\Form\UserType</argument>
@@ -3468,7 +3498,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.TJ3tqf3"/>
+      <argument type="service" id=".service_locator.j0vXN9N"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4347,7 +4377,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.N41nchi"/>
+      <argument type="service" id=".service_locator.sedBae9"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6552,9 +6582,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ApiController" class="App\Controller\ApiController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CoachController" class="App\Controller\CoachController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProduitController" class="App\Controller\ProduitController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProduitController" class="App\Controller\ProduitController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProduitController" class="App\Controller\ProduitController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6569,12 +6605,20 @@
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CoachType" class="App\Form\CoachType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CoachType" class="App\Form\CoachType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProduitType" class="App\Form\ProduitType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProduitType" class="App\Form\ProduitType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CoachRepository" class="App\Repository\CoachRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProduitRepository" class="App\Repository\ProduitRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ProduitRepository" class="App\Repository\ProduitRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -6922,6 +6966,51 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
+    <service id=".service_locator.SAYXif1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RNsiPAw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Veo9UrM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coach" type="service_closure" id=".errored..service_locator.Veo9UrM.App\Entity\Coach"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Hx9tlLO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="coach" type="service_closure" id=".errored..service_locator.Hx9tlLO.App\Entity\Coach"/>
+        <argument key="coachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ONtZwya" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.iGUm1r8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="produit" type="service_closure" id=".errored..service_locator.iGUm1r8.App\Entity\Produit"/>
+      </argument>
+    </service>
+    <service id=".service_locator.bn70ThF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="produit" type="service_closure" id=".errored..service_locator.bn70ThF.App\Entity\Produit"/>
+        <argument key="produitRepository" type="service_closure" id="App\Repository\ProduitRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.iQAD6w2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6985,9 +7074,19 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.vUivWyG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.upPhBbO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\CoachController::delete" type="service_closure" id=".service_locator.Hx9tlLO"/>
+        <argument key="App\Controller\CoachController::edit" type="service_closure" id=".service_locator.Hx9tlLO"/>
+        <argument key="App\Controller\CoachController::index" type="service_closure" id=".service_locator.SAYXif1"/>
+        <argument key="App\Controller\CoachController::new" type="service_closure" id=".service_locator.RNsiPAw"/>
+        <argument key="App\Controller\CoachController::show" type="service_closure" id=".service_locator.Veo9UrM"/>
+        <argument key="App\Controller\ProduitController::delete" type="service_closure" id=".service_locator.bn70ThF"/>
+        <argument key="App\Controller\ProduitController::edit" type="service_closure" id=".service_locator.bn70ThF"/>
+        <argument key="App\Controller\ProduitController::index" type="service_closure" id=".service_locator.ONtZwya"/>
+        <argument key="App\Controller\ProduitController::new" type="service_closure" id=".service_locator.ONtZwya"/>
+        <argument key="App\Controller\ProduitController::show" type="service_closure" id=".service_locator.iGUm1r8"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.iQAD6w2"/>
         <argument key="App\Controller\RegistrationController::registerAdmin" type="service_closure" id=".service_locator.iQAD6w2"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.pXhSQsU"/>
@@ -7002,6 +7101,16 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
+        <argument key="App\Controller\CoachController:delete" type="service_closure" id=".service_locator.Hx9tlLO"/>
+        <argument key="App\Controller\CoachController:edit" type="service_closure" id=".service_locator.Hx9tlLO"/>
+        <argument key="App\Controller\CoachController:index" type="service_closure" id=".service_locator.SAYXif1"/>
+        <argument key="App\Controller\CoachController:new" type="service_closure" id=".service_locator.RNsiPAw"/>
+        <argument key="App\Controller\CoachController:show" type="service_closure" id=".service_locator.Veo9UrM"/>
+        <argument key="App\Controller\ProduitController:delete" type="service_closure" id=".service_locator.bn70ThF"/>
+        <argument key="App\Controller\ProduitController:edit" type="service_closure" id=".service_locator.bn70ThF"/>
+        <argument key="App\Controller\ProduitController:index" type="service_closure" id=".service_locator.ONtZwya"/>
+        <argument key="App\Controller\ProduitController:new" type="service_closure" id=".service_locator.ONtZwya"/>
+        <argument key="App\Controller\ProduitController:show" type="service_closure" id=".service_locator.iGUm1r8"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.iQAD6w2"/>
         <argument key="App\Controller\RegistrationController:registerAdmin" type="service_closure" id=".service_locator.iQAD6w2"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.pXhSQsU"/>
@@ -7075,10 +7184,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.TJ3tqf3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.j0vXN9N" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ChangePasswordFormType" type="service_closure" id="App\Form\ChangePasswordFormType"/>
+        <argument key="App\Form\CoachType" type="service_closure" id="App\Form\CoachType"/>
+        <argument key="App\Form\ProduitType" type="service_closure" id="App\Form\ProduitType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
@@ -7167,9 +7278,11 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.N41nchi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.sedBae9" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CoachRepository" type="service_closure" id="App\Repository\CoachRepository"/>
+        <argument key="App\Repository\ProduitRepository" type="service_closure" id="App\Repository\ProduitRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -7446,9 +7559,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\CoachController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\CoachController"/>
+      <argument>App\Controller\CoachController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ProduitController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProduitController"/>
+      <argument>App\Controller\ProduitController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -7658,12 +7783,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.vUivWyG"/>
+      <argument type="service" id=".service_locator.upPhBbO"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.vUivWyG"/>
+      <argument type="service" id=".service_locator.upPhBbO"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7683,6 +7808,10 @@
       </call>
     </service>
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.Veo9UrM.App\Entity\Coach" class="App\Entity\Coach"/>
+    <service id=".errored..service_locator.Hx9tlLO.App\Entity\Coach" class="App\Entity\Coach"/>
+    <service id=".errored..service_locator.iGUm1r8.App\Entity\Produit" class="App\Entity\Produit"/>
+    <service id=".errored..service_locator.bn70ThF.App\Entity\Produit" class="App\Entity\Produit"/>
     <service id=".errored..service_locator.4T4EJFR.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.jYO2.AM.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.9uW928t.App\Entity\User" class="App\Entity\User"/>
@@ -8639,7 +8768,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vUivWyG"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.upPhBbO"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8664,9 +8793,9 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.x__eXbe" alias=".service_locator.iQAD6w2"/>
-    <service id=".service_locator.75HFGFW" alias=".service_locator.vUivWyG"/>
+    <service id=".service_locator.ACYUWiU" alias=".service_locator.upPhBbO"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.Wkw.RV3" alias=".service_locator.TJ3tqf3"/>
+    <service id=".service_locator.MC53HW4" alias=".service_locator.j0vXN9N"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8692,6 +8821,13 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.0HzdvR1" alias=".service_locator.SAYXif1"/>
+    <service id=".service_locator.v7AHUGu" alias=".service_locator.RNsiPAw"/>
+    <service id=".service_locator.nz3onHo" alias=".service_locator.Veo9UrM"/>
+    <service id=".service_locator.TVV7p5H" alias=".service_locator.Hx9tlLO"/>
+    <service id=".service_locator.VI9Z9zn" alias=".service_locator.ONtZwya"/>
+    <service id=".service_locator.vYpYubR" alias=".service_locator.iGUm1r8"/>
+    <service id=".service_locator.RNxLa73" alias=".service_locator.bn70ThF"/>
     <service id=".service_locator.yhWEeZ1" alias=".service_locator.iQAD6w2"/>
     <service id=".service_locator.vmloCRj" alias=".service_locator.pXhSQsU"/>
     <service id=".service_locator.Gf4Gasx" alias=".service_locator.kdKsWx5"/>

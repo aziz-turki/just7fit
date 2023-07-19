@@ -392,6 +392,6 @@ class __TwigTemplate_737b9a9f62dfe9e8fae61deda60fd1b9 extends Template
     <script src=\"{{asset('assetsB/js/main.js')}}\"></script>
 </body>
 
-</html>", "registration/register.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\registration\\register.html.twig");
+</html>", "registration/register.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\registration\\register.html.twig");
     }
 }

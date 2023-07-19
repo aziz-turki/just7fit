@@ -68,6 +68,18 @@ return [[
 '[C]App%5CController%5CApiController%23index' => 1,
 'App%5CController%5CApiController%23majReservation' => 3,
 '[C]App%5CController%5CApiController%23majReservation' => 1,
+'App%5CController%5CCoachController' => 0,
+'[C]App%5CController%5CCoachController' => 1,
+'App%5CController%5CCoachController%23index' => 0,
+'[C]App%5CController%5CCoachController%23index' => 1,
+'App%5CController%5CCoachController%23new' => 0,
+'[C]App%5CController%5CCoachController%23new' => 1,
+'App%5CController%5CCoachController%23show' => 0,
+'[C]App%5CController%5CCoachController%23show' => 1,
+'App%5CController%5CCoachController%23edit' => 0,
+'[C]App%5CController%5CCoachController%23edit' => 1,
+'App%5CController%5CCoachController%23delete' => 0,
+'[C]App%5CController%5CCoachController%23delete' => 1,
 'App%5CController%5CHomeController' => 0,
 '[C]App%5CController%5CHomeController' => 1,
 'App%5CController%5CHomeController%23index' => 0,
@@ -118,6 +130,8 @@ return [[
 '[C]App%5CController%5CSecurityController%23logout' => 1,
 'App%5CController%5CUserController' => 0,
 '[C]App%5CController%5CUserController' => 1,
+'App%5CController%5CUserController%23votreActionSymfony' => 4,
+'[C]App%5CController%5CUserController%23votreActionSymfony' => 1,
 'App%5CController%5CUserController%23index' => 0,
 '[C]App%5CController%5CUserController%23index' => 1,
 'App%5CController%5CUserController%23new' => 0,
@@ -128,6 +142,72 @@ return [[
 '[C]App%5CController%5CUserController%23edit' => 1,
 'App%5CController%5CUserController%23delete' => 0,
 '[C]App%5CController%5CUserController%23delete' => 1,
+'App%5CEntity%5CCoach' => 0,
+'[C]App%5CEntity%5CCoach' => 1,
+'App%5CEntity%5CCoach%23getRoles' => 0,
+'[C]App%5CEntity%5CCoach%23getRoles' => 1,
+'App%5CEntity%5CCoach%23setRoles' => 0,
+'[C]App%5CEntity%5CCoach%23setRoles' => 1,
+'App%5CEntity%5CCoach%23getPassword' => 0,
+'[C]App%5CEntity%5CCoach%23getPassword' => 1,
+'App%5CEntity%5CCoach%23setPassword' => 0,
+'[C]App%5CEntity%5CCoach%23setPassword' => 1,
+'App%5CEntity%5CCoach%23getId' => 0,
+'[C]App%5CEntity%5CCoach%23getId' => 1,
+'App%5CEntity%5CCoach%23getNom' => 0,
+'[C]App%5CEntity%5CCoach%23getNom' => 1,
+'App%5CEntity%5CCoach%23setNom' => 0,
+'[C]App%5CEntity%5CCoach%23setNom' => 1,
+'App%5CEntity%5CCoach%23getPrenom' => 0,
+'[C]App%5CEntity%5CCoach%23getPrenom' => 1,
+'App%5CEntity%5CCoach%23setPrenom' => 0,
+'[C]App%5CEntity%5CCoach%23setPrenom' => 1,
+'App%5CEntity%5CCoach%23getSexe' => 0,
+'[C]App%5CEntity%5CCoach%23getSexe' => 1,
+'App%5CEntity%5CCoach%23setSexe' => 0,
+'[C]App%5CEntity%5CCoach%23setSexe' => 1,
+'App%5CEntity%5CCoach%23getAge' => 0,
+'[C]App%5CEntity%5CCoach%23getAge' => 1,
+'App%5CEntity%5CCoach%23setAge' => 0,
+'[C]App%5CEntity%5CCoach%23setAge' => 1,
+'App%5CEntity%5CCoach%23getContrat' => 0,
+'[C]App%5CEntity%5CCoach%23getContrat' => 1,
+'App%5CEntity%5CCoach%23setContrat' => 0,
+'[C]App%5CEntity%5CCoach%23setContrat' => 1,
+'App%5CEntity%5CCoach%23getDatedebut' => 0,
+'[C]App%5CEntity%5CCoach%23getDatedebut' => 1,
+'App%5CEntity%5CCoach%23setDatedebut' => 0,
+'[C]App%5CEntity%5CCoach%23setDatedebut' => 1,
+'App%5CEntity%5CCoach%23getDatefin' => 0,
+'[C]App%5CEntity%5CCoach%23getDatefin' => 1,
+'App%5CEntity%5CCoach%23setDatefin' => 0,
+'[C]App%5CEntity%5CCoach%23setDatefin' => 1,
+'App%5CEntity%5CCoach%23getEmail' => 0,
+'[C]App%5CEntity%5CCoach%23getEmail' => 1,
+'App%5CEntity%5CCoach%23setEmail' => 0,
+'[C]App%5CEntity%5CCoach%23setEmail' => 1,
+'App%5CEntity%5CCoach%24id' => 0,
+'[C]App%5CEntity%5CCoach%24id' => 1,
+'App%5CEntity%5CCoach%24nom' => 0,
+'[C]App%5CEntity%5CCoach%24nom' => 1,
+'App%5CEntity%5CCoach%24prenom' => 0,
+'[C]App%5CEntity%5CCoach%24prenom' => 1,
+'App%5CEntity%5CCoach%24sexe' => 0,
+'[C]App%5CEntity%5CCoach%24sexe' => 1,
+'App%5CEntity%5CCoach%24age' => 0,
+'[C]App%5CEntity%5CCoach%24age' => 1,
+'App%5CEntity%5CCoach%24contrat' => 0,
+'[C]App%5CEntity%5CCoach%24contrat' => 1,
+'App%5CEntity%5CCoach%24datedebut' => 0,
+'[C]App%5CEntity%5CCoach%24datedebut' => 1,
+'App%5CEntity%5CCoach%24datefin' => 0,
+'[C]App%5CEntity%5CCoach%24datefin' => 1,
+'App%5CEntity%5CCoach%24email' => 0,
+'[C]App%5CEntity%5CCoach%24email' => 1,
+'App%5CEntity%5CCoach%24roles' => 0,
+'[C]App%5CEntity%5CCoach%24roles' => 1,
+'App%5CEntity%5CCoach%24password' => 0,
+'[C]App%5CEntity%5CCoach%24password' => 1,
 'App%5CEntity%5CPdfuser' => 0,
 '[C]App%5CEntity%5CPdfuser' => 1,
 'App%5CEntity%5CPdfuser%23generatePdf' => 0,
@@ -154,13 +234,13 @@ return [[
 '[C]App%5CEntity%5CResetPasswordRequest%24id' => 1,
 'App%5CEntity%5CResetPasswordRequest%24user' => 0,
 '[C]App%5CEntity%5CResetPasswordRequest%24user' => 1,
-'App%5CEntity%5CResetPasswordRequest%24selector' => 4,
+'App%5CEntity%5CResetPasswordRequest%24selector' => 5,
 '[C]App%5CEntity%5CResetPasswordRequest%24selector' => 1,
-'App%5CEntity%5CResetPasswordRequest%24hashedToken' => 5,
+'App%5CEntity%5CResetPasswordRequest%24hashedToken' => 6,
 '[C]App%5CEntity%5CResetPasswordRequest%24hashedToken' => 1,
-'App%5CEntity%5CResetPasswordRequest%24requestedAt' => 6,
+'App%5CEntity%5CResetPasswordRequest%24requestedAt' => 7,
 '[C]App%5CEntity%5CResetPasswordRequest%24requestedAt' => 1,
-'App%5CEntity%5CResetPasswordRequest%24expiresAt' => 6,
+'App%5CEntity%5CResetPasswordRequest%24expiresAt' => 7,
 '[C]App%5CEntity%5CResetPasswordRequest%24expiresAt' => 1,
 'App%5CEntity%5CUser' => 0,
 '[C]App%5CEntity%5CUser' => 1,
@@ -188,12 +268,8 @@ return [[
 '[C]App%5CEntity%5CUser%23getSalt' => 1,
 'App%5CEntity%5CUser%23eraseCredentials' => 0,
 '[C]App%5CEntity%5CUser%23eraseCredentials' => 1,
-'App%5CEntity%5CUser%23__toSting' => 0,
-'[C]App%5CEntity%5CUser%23__toSting' => 1,
 'App%5CEntity%5CUser%23getUser' => 0,
 '[C]App%5CEntity%5CUser%23getUser' => 1,
-'App%5CEntity%5CUser%23__toString' => 0,
-'[C]App%5CEntity%5CUser%23__toString' => 1,
 'App%5CEntity%5CUser%23getNom' => 0,
 '[C]App%5CEntity%5CUser%23getNom' => 1,
 'App%5CEntity%5CUser%23setNom' => 0,
@@ -214,6 +290,14 @@ return [[
 '[C]App%5CEntity%5CUser%23getAbonnement' => 1,
 'App%5CEntity%5CUser%23setAbonnement' => 0,
 '[C]App%5CEntity%5CUser%23setAbonnement' => 1,
+'App%5CEntity%5CUser%23getDatedebut' => 0,
+'[C]App%5CEntity%5CUser%23getDatedebut' => 1,
+'App%5CEntity%5CUser%23setDatedebut' => 0,
+'[C]App%5CEntity%5CUser%23setDatedebut' => 1,
+'App%5CEntity%5CUser%23getDatefin' => 0,
+'[C]App%5CEntity%5CUser%23getDatefin' => 1,
+'App%5CEntity%5CUser%23setDatefin' => 0,
+'[C]App%5CEntity%5CUser%23setDatefin' => 1,
 'App%5CEntity%5CUser%24id' => 0,
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24email' => 0,
@@ -232,6 +316,10 @@ return [[
 '[C]App%5CEntity%5CUser%24age' => 1,
 'App%5CEntity%5CUser%24abonnement' => 0,
 '[C]App%5CEntity%5CUser%24abonnement' => 1,
+'App%5CEntity%5CUser%24datedebut' => 0,
+'[C]App%5CEntity%5CUser%24datedebut' => 1,
+'App%5CEntity%5CUser%24datefin' => 0,
+'[C]App%5CEntity%5CUser%24datefin' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
@@ -804,7 +892,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1688728107,
+1 => 1689666359,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -857,6 +945,33 @@ return [[
 4 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/votre/action/symfony',
+                ],
+                'name' => [
+                    'votre_action_symfony',
+                ],
+                'methods' => [
+                    [
+                        'POST',
+                    ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+5 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         ],
         null,
@@ -882,7 +997,7 @@ return [[
         []
     );
 },
-5 => static function () {
+6 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
@@ -910,7 +1025,7 @@ return [[
         []
     );
 },
-6 => static function () {
+7 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),

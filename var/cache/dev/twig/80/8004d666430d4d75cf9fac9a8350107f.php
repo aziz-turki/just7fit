@@ -1671,6 +1671,6 @@ class __TwigTemplate_43c7425b00ae1b5f03281a54b743139c extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\vendor\\doctrine\\doctrine-bundle\\Resources\\views\\Collector\\db.html.twig");
     }
 }

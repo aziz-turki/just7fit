@@ -65,10 +65,50 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+
+
 </head>
 <body>
 <center>
   <h2>Liste des Utilisateurs</h2>
+
+  <ul>
+  <li><a href="/coach/">coach</a></li>
+  <li><a class="active" href="/user/">User</a></li>
+  <li><a href="/produit/">Produit</a></li>
+</ul>
+
 </center>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -413,6 +413,6 @@ class __TwigTemplate_5258b71a2a502d62749759fda78a4fc4 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
     }
 }

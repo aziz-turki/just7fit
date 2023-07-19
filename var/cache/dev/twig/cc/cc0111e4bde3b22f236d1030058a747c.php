@@ -143,6 +143,6 @@ class __TwigTemplate_b862c36444e01a78ada5992e2637737c extends Template
 
 
 {% endblock %}
-", "user/new.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\user\\new.html.twig");
+", "user/new.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\user\\new.html.twig");
     }
 }

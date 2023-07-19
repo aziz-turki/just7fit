@@ -644,6 +644,6 @@ class __TwigTemplate_40417ed8d008c8e55f29dfd2c1761e24 extends Template
     <script src=\"{{asset('assettB/js/main.js')}}\"></script>
 </body>
 
-</html>", "back.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\back.html.twig");
+</html>", "back.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\back.html.twig");
     }
 }

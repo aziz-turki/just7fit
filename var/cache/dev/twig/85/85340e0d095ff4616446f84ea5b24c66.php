@@ -169,10 +169,50 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css\">
   <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js\"></script>
 
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+
+
 </head>
 <body>
 <center>
   <h2>Liste des Utilisateurs</h2>
+
+  <ul>
+  <li><a href=\"/coach/\">coach</a></li>
+  <li><a class=\"active\" href=\"/user/\">User</a></li>
+  <li><a href=\"/produit/\">Produit</a></li>
+</ul>
+
 </center>
 
   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -204,7 +244,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
 
       \$.ajax({
         url: '";
-        // line 102
+        // line 142
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
         echo "', // URL of your Symfony action to display the add form
         type: 'GET',
@@ -226,7 +266,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
                 // Envoyer les données au serveur pour enregistrement
                 \$.ajax({
                   url: '";
-        // line 121
+        // line 161
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => "ID_PLACEHOLDER"]);
         echo "'.replace('ID_PLACEHOLDER', userId),
                   type: 'POST',
@@ -252,7 +292,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
     \$('.edit-button').click(function() {
       var userId = \$(this).data('user-id');
       var url = '";
-        // line 144
+        // line 184
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => "ID_PLACEHOLDER"]);
         echo "'.replace('ID_PLACEHOLDER', userId);
       openPopup(url);
@@ -280,7 +320,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
             // Envoyer les données au serveur pour enregistrement
             \$.ajax({
               url: '";
-        // line 169
+        // line 209
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => "ID_PLACEHOLDER"]);
         echo "'.replace('ID_PLACEHOLDER', userId),
               type: 'POST',
@@ -311,7 +351,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
     <tr>
       <th>Id</th>
       <th><a href=\"";
-        // line 197
+        // line 237
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index", ["sort" => "nom"]);
         echo "\">Nom</a></th>
       <th>Prenom</th>
@@ -327,9 +367,9 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
   </thead>
   <tbody>
     ";
-        // line 210
+        // line 250
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 210, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 250, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -345,54 +385,54 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 211
+            // line 251
             echo "    <tr>
       <td>";
-            // line 212
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 212), "html", null, true);
+            // line 252
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 252), "html", null, true);
             echo "</td>
       <td>";
-            // line 213
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 213), "html", null, true);
+            // line 253
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 253), "html", null, true);
             echo "</td>
       <td>";
-            // line 214
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 214), "html", null, true);
+            // line 254
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 254), "html", null, true);
             echo "</td>
       <td>";
-            // line 215
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "sexe", [], "any", false, false, false, 215), "html", null, true);
+            // line 255
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "sexe", [], "any", false, false, false, 255), "html", null, true);
             echo "</td>
       <td>";
-            // line 216
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "age", [], "any", false, false, false, 216), "html", null, true);
+            // line 256
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "age", [], "any", false, false, false, 256), "html", null, true);
             echo "</td>
       <td>";
-            // line 217
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "abonnement", [], "any", false, false, false, 217), "html", null, true);
+            // line 257
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "abonnement", [], "any", false, false, false, 257), "html", null, true);
             echo "</td>
       <td>";
-            // line 218
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datedebut", [], "any", false, false, false, 218)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datedebut", [], "any", false, false, false, 218), "d-m-Y"), "html", null, true))) : (print ("")));
+            // line 258
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "datedebut", [], "any", false, false, false, 258)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datedebut", [], "any", false, false, false, 258), "d-m-Y"), "html", null, true))) : (print ("")));
             echo "</td>
       <td>";
-            // line 219
-            ((twig_get_attribute($this->env, $this->source, $context["user"], "datefin", [], "any", false, false, false, 219)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datefin", [], "any", false, false, false, 219), "d-m-Y"), "html", null, true))) : (print ("")));
+            // line 259
+            ((twig_get_attribute($this->env, $this->source, $context["user"], "datefin", [], "any", false, false, false, 259)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datefin", [], "any", false, false, false, 259), "d-m-Y"), "html", null, true))) : (print ("")));
             echo "</td>
       <td>";
-            // line 220
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 220), "html", null, true);
+            // line 260
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 260), "html", null, true);
             echo "</td>
         
         <td>
           <button style=\"background-color: #87CCEE; color: white; padding: 5px 10px; text-decoration: none;\" class=\"edit-button\" data-user-id=\"";
-            // line 223
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 223), "html", null, true);
+            // line 263
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 263), "html", null, true);
             echo "\">Modifier</button>
         </td>
         <td>
           ";
-            // line 226
+            // line 266
             echo twig_include($this->env, $context, "user/_delete_form.html.twig");
             echo "
         </td>
@@ -409,7 +449,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
             }
         }
         if (!$context['_iterated']) {
-            // line 230
+            // line 270
             echo "      <tr>
         <td colspan=\"5\">no records found</td>
       </tr>
@@ -418,15 +458,15 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 234
+        // line 274
         echo "      </tbody>
 </table>
 
 <center>
   <div class=\"pagination\">
     ";
-        // line 239
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 239, $this->source); })()));
+        // line 279
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 279, $this->source); })()));
         echo "
   </div>
 </center>
@@ -454,7 +494,7 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
 
     public function getDebugInfo()
     {
-        return array (  429 => 239,  422 => 234,  413 => 230,  396 => 226,  390 => 223,  384 => 220,  380 => 219,  376 => 218,  372 => 217,  368 => 216,  364 => 215,  360 => 214,  356 => 213,  352 => 212,  349 => 211,  331 => 210,  315 => 197,  284 => 169,  256 => 144,  230 => 121,  208 => 102,  166 => 63,  159 => 58,  149 => 57,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  469 => 279,  462 => 274,  453 => 270,  436 => 266,  430 => 263,  424 => 260,  420 => 259,  416 => 258,  412 => 257,  408 => 256,  404 => 255,  400 => 254,  396 => 253,  392 => 252,  389 => 251,  371 => 250,  355 => 237,  324 => 209,  296 => 184,  270 => 161,  248 => 142,  166 => 63,  159 => 58,  149 => 57,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -526,10 +566,50 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css\">
   <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js\"></script>
 
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+
+
 </head>
 <body>
 <center>
   <h2>Liste des Utilisateurs</h2>
+
+  <ul>
+  <li><a href=\"/coach/\">coach</a></li>
+  <li><a class=\"active\" href=\"/user/\">User</a></li>
+  <li><a href=\"/produit/\">Produit</a></li>
+</ul>
+
 </center>
 
   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
@@ -704,6 +784,6 @@ class __TwigTemplate_6362b86382e625dfae9e305a78d30553 extends Template
 </body>
 </html>
 {% endblock %}
-", "user/index.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\user\\index.html.twig");
+", "user/index.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\user\\index.html.twig");
     }
 }

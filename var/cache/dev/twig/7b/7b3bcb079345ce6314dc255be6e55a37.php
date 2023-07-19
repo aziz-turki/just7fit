@@ -366,6 +366,6 @@ class __TwigTemplate_10c01ee70ced7c9052767760966530f5 extends Template
     <script src=\"{{asset('assetsB/js/main.js')}}\"></script>
 </body>
 
-</html>", "reset_password/request.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\reset_password\\request.html.twig");
+</html>", "reset_password/request.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\reset_password\\request.html.twig");
     }
 }

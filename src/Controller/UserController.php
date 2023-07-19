@@ -38,7 +38,7 @@ public function votreActionSymfony(): Response
     $pagination = $paginator->paginate(
         $users,
         $request->query->getInt('page', 1),
-        8
+        7
     );
 
     return $this->render('user/index.html.twig', [

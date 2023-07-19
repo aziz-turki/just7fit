@@ -92,6 +92,6 @@ class __TwigTemplate_082880467a25aeb719332d75e54f63f9 extends Template
 <p>This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
 
 <p>Cheers!</p>
-", "reset_password/email.html.twig", "C:\\Users\\octanet\\Desktop\\test1\\test1\\templates\\reset_password\\email.html.twig");
+", "reset_password/email.html.twig", "C:\\Users\\octanet\\Desktop\\just7fit\\templates\\reset_password\\email.html.twig");
     }
 }
