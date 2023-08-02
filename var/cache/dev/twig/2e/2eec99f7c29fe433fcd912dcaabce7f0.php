@@ -66,7 +66,7 @@ class __TwigTemplate_7110b5286b7a2f5ce18510d0b7dfe7c1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Liste des Utilisateurs";
+        echo "Liste des Produits";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -176,7 +176,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #000;
 }
 
 li {
@@ -201,20 +201,21 @@ li a:hover:not(.active) {
 </style>
 
 
-
 </head>
 <body>
 <center>
-  <h2>Liste des Utilisateurs</h2>
+  <h2>Liste des Produits</h2>
+</center>
 
-  <ul>
-  <li><a href=\"/coach/\">Coach</a></li>
+
+<ul>
+  <li><a href=\"/coach/\">coach</a></li>  
   <li><a href=\"/user/\">User</a></li>
   <li><a class=\"active\" href=\"/produit/\">Produit</a></li>
 </ul>
 
-</center>
 
+ 
   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
   <br>
@@ -222,20 +223,6 @@ li a:hover:not(.active) {
   <br>
   <br>
 
-<script>
-  function togglePasswordVisibility(produitId) {
-    const passwordInput = document.getElementById(`password-\${produitId}`);
-    const passwordToggle = document.querySelector(`#password-\${produitId} + .password-toggle`);
-
-    if (passwordInput.type === \"password\") {
-      passwordInput.type = \"text\";
-      passwordToggle.classList.add(\"active\");
-    } else {
-      passwordInput.type = \"password\";
-      passwordToggle.classList.remove(\"active\");
-    }
-  }
-</script>
 
 <script>
   \$(document).ready(function() {
@@ -244,13 +231,13 @@ li a:hover:not(.active) {
 
       \$.ajax({
         url: '";
-        // line 142
+        // line 129
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_new");
         echo "', // URL of your Symfony action to display the add form
-        type: 'GET',
+        type: 'POST',
         success: function(response) {
           Swal.fire({
-            title: 'Ajouter un utilisateur',
+            title: 'Ajouter un produit',
             html: response, // HTML content of the form
             showCloseButton: true,
             showCancelButton: false,
@@ -260,25 +247,8 @@ li a:hover:not(.active) {
               \$('#produitForm').submit(function(e) {
                 e.preventDefault(); // Empêcher le comportement de soumission par défaut
 
-                // Récupérer les données du formulaire
-                var formData = \$(this).serialize();
-
                 // Envoyer les données au serveur pour enregistrement
-                \$.ajax({
-                  url: '";
-        // line 161
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => "ID_PLACEHOLDER"]);
-        echo "'.replace('ID_PLACEHOLDER', produitId),
-                  type: 'POST',
-                  data: formData,
-                  success: function() {
-                    Swal.fire('Success', 'produit details updated!', 'success');
-                    location.reload(); // Recharger la page pour afficher les mises à jour
-                  },
-                  error: function() {
-                    Swal.fire('Error', 'An error occurred while updating produit details.', 'error');
-                  }
-                });
+                
               });
             }
           });
@@ -291,48 +261,33 @@ li a:hover:not(.active) {
 
     \$('.edit-button').click(function() {
       var produitId = \$(this).data('produit-id');
+      var imageUrl = \$(this).data('image');
       var url = '";
-        // line 184
+        // line 158
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => "ID_PLACEHOLDER"]);
         echo "'.replace('ID_PLACEHOLDER', produitId);
+
       openPopup(url);
     });
   });
 
-  function openPopup(url) {
+  function openPopup(url, imageUrl) {
   \$.ajax({
     url: url,
     success: function(response) {
       Swal.fire({
-        title: 'Modifier un utilisateur',
+        title: 'Modifier un produit',
         html: response, // HTML content of the form
         showCloseButton: true,
         showCancelButton: false, // Remove the Cancel button
         showConfirmButton: false, // Remove the Save button
         onOpen: () => {
-          // Ajouter un gestionnaire d'événements pour la soumission du formulaire
+          // Set the image URL in the popup form
+          \$('#produitForm img#popup-image').attr('src', imageUrl);
+
+          // Add a handler for form submission
           \$('#produitForm').submit(function(e) {
-            e.preventDefault(); // Empêcher le comportement de soumission par défaut
-
-            // Récupérer les données du formulaire
-            var formData = \$(this).serialize();
-
-            // Envoyer les données au serveur pour enregistrement
-            \$.ajax({
-              url: '";
-        // line 209
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => "ID_PLACEHOLDER"]);
-        echo "'.replace('ID_PLACEHOLDER', produitId),
-              type: 'POST',
-              data: formData,
-              success: function() {
-                Swal.fire('Success', 'produit details updated!', 'success');
-                location.reload(); // Recharger la page pour afficher les mises à jour
-              },
-              error: function() {
-                Swal.fire('Error', 'An error occurred while updating produit details.', 'error');
-              }
-            });
+            // Rest of the code remains the same...
           });
         }
       });
@@ -343,6 +298,7 @@ li a:hover:not(.active) {
   });
 }
 
+
 </script>
 
 
@@ -350,13 +306,13 @@ li a:hover:not(.active) {
   <thead>
     <tr>
       <th>Id</th>
-      <th>Image</th>
+      <th>image</th>
       <th><a href=\"";
-        // line 238
+        // line 200
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["sort" => "nom"]);
         echo "\">Nom</a></th>
       <th>prix</th>
-      <th>datepost</th>
+      <th>date post</th>
       <th>detail</th>
       <th></th>
       <th></th>
@@ -364,9 +320,9 @@ li a:hover:not(.active) {
   </thead>
   <tbody>
     ";
-        // line 247
+        // line 209
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 247, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 209, $this->source); })()));
         $context['_iterated'] = false;
         $context['loop'] = [
           'parent' => $context['_parent'],
@@ -382,46 +338,47 @@ li a:hover:not(.active) {
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 248
+            // line 210
             echo "    <tr>
       <td>";
-            // line 249
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 249), "html", null, true);
+            // line 211
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 211), "html", null, true);
+            echo "</td>
+      <td><img src=\"";
+            // line 212
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 212))), "html", null, true);
+            echo "\" style=\" width:100px; height:100px; \" alt=\"\"/></td>
+      <td>";
+            // line 213
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 213), "html", null, true);
             echo "</td>
       <td>";
-            // line 250
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 250), "html", null, true);
+            // line 214
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 214), "html", null, true);
             echo "</td>
       <td>";
-            // line 251
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "nom", [], "any", false, false, false, 251), "html", null, true);
+            // line 215
+            ((twig_get_attribute($this->env, $this->source, $context["produit"], "datepost", [], "any", false, false, false, 215)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "datepost", [], "any", false, false, false, 215), "d-m-Y"), "html", null, true))) : (print ("")));
             echo "</td>
       <td>";
-            // line 252
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 252), "html", null, true);
-            echo "</td>
-      <td>";
-            // line 253
-            ((twig_get_attribute($this->env, $this->source, $context["produit"], "datepost", [], "any", false, false, false, 253)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "datepost", [], "any", false, false, false, 253), "d-m-Y"), "html", null, true))) : (print ("")));
-            echo "</td>
-      <td>";
-            // line 254
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "detail", [], "any", false, false, false, 254), "html", null, true);
-            echo "</td>
-        
-        <td>
-          <button style=\"background-color: #87CCEE; color: white; padding: 5px 10px; text-decoration: none;\" class=\"edit-button\" data-produit-id=\"";
-            // line 257
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 257), "html", null, true);
+            // line 216
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "detail", [], "any", false, false, false, 216), "html", null, true);
+            echo "</td>        
+      <td>
+        <button style=\"background-color: #87CCEE; color: white; padding: 5px 10px; text-decoration: none;\" class=\"edit-button\" data-produit-id=\"";
+            // line 218
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 218), "html", null, true);
+            echo "\" data-image=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 218))), "html", null, true);
             echo "\">Modifier</button>
-        </td>
-        <td>
-          ";
-            // line 260
+      </td>
+      <td>
+        ";
+            // line 221
             echo twig_include($this->env, $context, "produit/_delete_form.html.twig");
             echo "
-        </td>
-      </tr>
+      </td>
+    </tr>
       ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
@@ -434,7 +391,7 @@ li a:hover:not(.active) {
             }
         }
         if (!$context['_iterated']) {
-            // line 264
+            // line 225
             echo "      <tr>
         <td colspan=\"5\">no records found</td>
       </tr>
@@ -443,13 +400,20 @@ li a:hover:not(.active) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['produit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 268
+        // line 229
         echo "      </tbody>
 </table>
 
-<center>
-</center>
 
+
+<center>
+  <div class=\"pagination\">
+    ";
+        // line 236
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 236, $this->source); })()));
+        echo "
+  </div>
+</center>
 </body>
 </html>
 ";
@@ -473,14 +437,14 @@ li a:hover:not(.active) {
 
     public function getDebugInfo()
     {
-        return array (  447 => 268,  438 => 264,  421 => 260,  415 => 257,  409 => 254,  405 => 253,  401 => 252,  397 => 251,  393 => 250,  389 => 249,  386 => 248,  368 => 247,  356 => 238,  324 => 209,  296 => 184,  270 => 161,  248 => 142,  166 => 63,  159 => 58,  149 => 57,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  413 => 236,  404 => 229,  395 => 225,  378 => 221,  370 => 218,  365 => 216,  361 => 215,  357 => 214,  353 => 213,  349 => 212,  345 => 211,  342 => 210,  324 => 209,  312 => 200,  267 => 158,  235 => 129,  166 => 63,  159 => 58,  149 => 57,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Liste des Utilisateurs{% endblock %}
+{% block title %}Liste des Produits{% endblock %}
 {% block stylesheets %}
 <style>
 .pagination {
@@ -552,7 +516,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #000;
 }
 
 li {
@@ -577,20 +541,21 @@ li a:hover:not(.active) {
 </style>
 
 
-
 </head>
 <body>
 <center>
-  <h2>Liste des Utilisateurs</h2>
+  <h2>Liste des Produits</h2>
+</center>
 
-  <ul>
-  <li><a href=\"/coach/\">Coach</a></li>
+
+<ul>
+  <li><a href=\"/coach/\">coach</a></li>  
   <li><a href=\"/user/\">User</a></li>
   <li><a class=\"active\" href=\"/produit/\">Produit</a></li>
 </ul>
 
-</center>
 
+ 
   <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
 
   <br>
@@ -598,20 +563,6 @@ li a:hover:not(.active) {
   <br>
   <br>
 
-<script>
-  function togglePasswordVisibility(produitId) {
-    const passwordInput = document.getElementById(`password-\${produitId}`);
-    const passwordToggle = document.querySelector(`#password-\${produitId} + .password-toggle`);
-
-    if (passwordInput.type === \"password\") {
-      passwordInput.type = \"text\";
-      passwordToggle.classList.add(\"active\");
-    } else {
-      passwordInput.type = \"password\";
-      passwordToggle.classList.remove(\"active\");
-    }
-  }
-</script>
 
 <script>
   \$(document).ready(function() {
@@ -620,10 +571,10 @@ li a:hover:not(.active) {
 
       \$.ajax({
         url: '{{ path('app_produit_new') }}', // URL of your Symfony action to display the add form
-        type: 'GET',
+        type: 'POST',
         success: function(response) {
           Swal.fire({
-            title: 'Ajouter un utilisateur',
+            title: 'Ajouter un produit',
             html: response, // HTML content of the form
             showCloseButton: true,
             showCancelButton: false,
@@ -633,22 +584,8 @@ li a:hover:not(.active) {
               \$('#produitForm').submit(function(e) {
                 e.preventDefault(); // Empêcher le comportement de soumission par défaut
 
-                // Récupérer les données du formulaire
-                var formData = \$(this).serialize();
-
                 // Envoyer les données au serveur pour enregistrement
-                \$.ajax({
-                  url: '{{ path('app_produit_edit', {'id': 'ID_PLACEHOLDER'}) }}'.replace('ID_PLACEHOLDER', produitId),
-                  type: 'POST',
-                  data: formData,
-                  success: function() {
-                    Swal.fire('Success', 'produit details updated!', 'success');
-                    location.reload(); // Recharger la page pour afficher les mises à jour
-                  },
-                  error: function() {
-                    Swal.fire('Error', 'An error occurred while updating produit details.', 'error');
-                  }
-                });
+                
               });
             }
           });
@@ -661,42 +598,30 @@ li a:hover:not(.active) {
 
     \$('.edit-button').click(function() {
       var produitId = \$(this).data('produit-id');
+      var imageUrl = \$(this).data('image');
       var url = '{{ path('app_produit_edit', {'id': 'ID_PLACEHOLDER'}) }}'.replace('ID_PLACEHOLDER', produitId);
+
       openPopup(url);
     });
   });
 
-  function openPopup(url) {
+  function openPopup(url, imageUrl) {
   \$.ajax({
     url: url,
     success: function(response) {
       Swal.fire({
-        title: 'Modifier un utilisateur',
+        title: 'Modifier un produit',
         html: response, // HTML content of the form
         showCloseButton: true,
         showCancelButton: false, // Remove the Cancel button
         showConfirmButton: false, // Remove the Save button
         onOpen: () => {
-          // Ajouter un gestionnaire d'événements pour la soumission du formulaire
+          // Set the image URL in the popup form
+          \$('#produitForm img#popup-image').attr('src', imageUrl);
+
+          // Add a handler for form submission
           \$('#produitForm').submit(function(e) {
-            e.preventDefault(); // Empêcher le comportement de soumission par défaut
-
-            // Récupérer les données du formulaire
-            var formData = \$(this).serialize();
-
-            // Envoyer les données au serveur pour enregistrement
-            \$.ajax({
-              url: '{{ path('app_produit_edit', {'id': 'ID_PLACEHOLDER'}) }}'.replace('ID_PLACEHOLDER', produitId),
-              type: 'POST',
-              data: formData,
-              success: function() {
-                Swal.fire('Success', 'produit details updated!', 'success');
-                location.reload(); // Recharger la page pour afficher les mises à jour
-              },
-              error: function() {
-                Swal.fire('Error', 'An error occurred while updating produit details.', 'error');
-              }
-            });
+            // Rest of the code remains the same...
           });
         }
       });
@@ -707,6 +632,7 @@ li a:hover:not(.active) {
   });
 }
 
+
 </script>
 
 
@@ -714,10 +640,10 @@ li a:hover:not(.active) {
   <thead>
     <tr>
       <th>Id</th>
-      <th>Image</th>
+      <th>image</th>
       <th><a href=\"{{ path('app_produit_index', {'sort': 'nom'}) }}\">Nom</a></th>
       <th>prix</th>
-      <th>datepost</th>
+      <th>date post</th>
       <th>detail</th>
       <th></th>
       <th></th>
@@ -727,19 +653,18 @@ li a:hover:not(.active) {
     {% for produit in produits %}
     <tr>
       <td>{{ produit.id }}</td>
-      <td>{{ produit.image }}</td>
+      <td><img src=\"{{ asset('uploads/' ~ produit.image) }}\" style=\" width:100px; height:100px; \" alt=\"\"/></td>
       <td>{{ produit.nom }}</td>
       <td>{{ produit.prix }}</td>
       <td>{{ produit.datepost ? produit.datepost|date('d-m-Y') : '' }}</td>
-      <td>{{ produit.detail }}</td>
-        
-        <td>
-          <button style=\"background-color: #87CCEE; color: white; padding: 5px 10px; text-decoration: none;\" class=\"edit-button\" data-produit-id=\"{{ produit.id }}\">Modifier</button>
-        </td>
-        <td>
-          {{ include('produit/_delete_form.html.twig') }}
-        </td>
-      </tr>
+      <td>{{ produit.detail }}</td>        
+      <td>
+        <button style=\"background-color: #87CCEE; color: white; padding: 5px 10px; text-decoration: none;\" class=\"edit-button\" data-produit-id=\"{{ produit.id }}\" data-image=\"{{ asset('uploads/' ~ produit.image) }}\">Modifier</button>
+      </td>
+      <td>
+        {{ include('produit/_delete_form.html.twig') }}
+      </td>
+    </tr>
       {% else %}
       <tr>
         <td colspan=\"5\">no records found</td>
@@ -748,9 +673,13 @@ li a:hover:not(.active) {
       </tbody>
 </table>
 
-<center>
-</center>
 
+
+<center>
+  <div class=\"pagination\">
+    {{ knp_pagination_render(produits) }}
+  </div>
+</center>
 </body>
 </html>
 {% endblock %}

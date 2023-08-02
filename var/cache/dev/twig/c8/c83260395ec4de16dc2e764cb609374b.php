@@ -57,7 +57,7 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         ";
         // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
+        // line 43
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/styles.css"), "html", null, true);
         echo "\">
@@ -66,18 +66,18 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         
         <main>
             ";
-        // line 24
+        // line 48
         $this->displayBlock('body', $context, $blocks);
-        // line 25
+        // line 49
         echo "        
 
        
 
         <script src=\"https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/js/axentix.min.js\"></script>
         ";
-        // line 30
+        // line 54
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 35
+        // line 59
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/scripts.js"), "html", null, true);
         echo "\"></script>
@@ -124,6 +124,30 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         echo "        
 <style>
 
+    .custom-label {
+        position: relative;
+    }
+
+    .custom-label-left {
+        left: -200px;
+    }
+
+    .custom-label-left2 {
+        left: -190px;
+    }
+
+    .custom-label-left3 {
+        left: -150px;
+    }
+
+    .custom-label-left4 {
+        left: -190px;
+    }
+
+    .custom-label-left5 {
+        left: -180px;
+    }
+    
 .inline-field {
     display: inline-block;
     margin-right: 10px;
@@ -139,7 +163,7 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
 
     }
 
-    // line 24
+    // line 48
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -157,7 +181,7 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
 
     }
 
-    // line 30
+    // line 54
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -167,7 +191,7 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 31
+        // line 55
         echo "        <script>
             let drop = new Axentix.Dropdown('#dropdown')
         </script>
@@ -192,7 +216,7 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
 
     public function getDebugInfo()
     {
-        return array (  171 => 31,  161 => 30,  143 => 24,  124 => 9,  114 => 8,  95 => 5,  81 => 35,  79 => 30,  72 => 25,  70 => 24,  61 => 19,  59 => 8,  53 => 5,  47 => 1,);
+        return array (  195 => 55,  185 => 54,  167 => 48,  124 => 9,  114 => 8,  95 => 5,  81 => 59,  79 => 54,  72 => 49,  70 => 48,  61 => 43,  59 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -208,6 +232,30 @@ class __TwigTemplate_a038f6608aa812f49692a5003379a736 extends Template
         
 <style>
 
+    .custom-label {
+        position: relative;
+    }
+
+    .custom-label-left {
+        left: -200px;
+    }
+
+    .custom-label-left2 {
+        left: -190px;
+    }
+
+    .custom-label-left3 {
+        left: -150px;
+    }
+
+    .custom-label-left4 {
+        left: -190px;
+    }
+
+    .custom-label-left5 {
+        left: -180px;
+    }
+    
 .inline-field {
     display: inline-block;
     margin-right: 10px;

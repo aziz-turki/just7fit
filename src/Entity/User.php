@@ -163,8 +163,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
 
 
-
-
 public function getUser(): Collection
 {
     return $this->User;

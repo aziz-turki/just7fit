@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProduitRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
@@ -14,14 +15,14 @@ class Produit
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 30)]
-    private ?string $image = null;
+    #[ORM\Column(length: 255, nullable: false)]
+    private $image = null;
 
     #[ORM\Column(length: 30)]
     private ?string $nom = null;
 
     #[ORM\Column]
-    private ?float $prix = null;
+    private ?int $prix = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $datepost = null;
@@ -41,12 +42,12 @@ class Produit
         return $this->id;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage($image)
     {
         $this->image = $image;
 
@@ -65,12 +66,12 @@ class Produit
         return $this;
     }
 
-    public function getPrix(): ?float
+    public function getPrix(): ?int
     {
         return $this->prix;
     }
 
-    public function setPrix(float $prix): self
+    public function setPrix(int $prix): self
     {
         $this->prix = $prix;
 

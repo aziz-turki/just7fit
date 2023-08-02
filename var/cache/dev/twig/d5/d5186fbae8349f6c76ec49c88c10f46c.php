@@ -89,7 +89,7 @@ class __TwigTemplate_2907be1cdb8b6eb6902fea2103522883 extends Template
     <form action=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 8, $this->source); })()), "id", [], "any", false, false, false, 8)]), "html", null, true);
-        echo "\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to update this produit?')\">
+        echo "\" method=\"post\" enctype=\"multipart/form-data\" onsubmit=\"return confirm('Are you sure you want to update this produit?')\">
 
     ";
         // line 10
@@ -130,7 +130,7 @@ class __TwigTemplate_2907be1cdb8b6eb6902fea2103522883 extends Template
 
 {% block body %}
 
-    <form action=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to update this produit?')\">
+    <form action=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" method=\"post\" enctype=\"multipart/form-data\" onsubmit=\"return confirm('Are you sure you want to update this produit?')\">
 
     {{ include('produit/_form.html.twig', {'button_label': 'Update'}) }}
 

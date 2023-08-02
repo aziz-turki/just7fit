@@ -92,10 +92,15 @@ class __TwigTemplate_9a35d12a0175c424dfabe7d0fd8cde55 extends Template
     <form action=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_new");
-        echo "\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to add this produit?')\">
+        echo "\" method=\"post\" enctype=\"multipart/form-data\" onsubmit=\"return confirm('Are you sure you want to add this produit?')\">
  
-    ";
+  <!-- <img id=\"popup-image\" src=\"";
         // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["produit"]) || array_key_exists("produit", $context) ? $context["produit"] : (function () { throw new RuntimeError('Variable "produit" does not exist.', 10, $this->source); })()), "image", [], "any", false, false, false, 10))), "html", null, true);
+        echo "\" style=\"width: 100px; height: 100px;\" alt=\"\"/> -->
+
+    ";
+        // line 12
         echo twig_include($this->env, $context, "produit/_form.html.twig");
         echo "
 
@@ -123,7 +128,7 @@ class __TwigTemplate_9a35d12a0175c424dfabe7d0fd8cde55 extends Template
 
     public function getDebugInfo()
     {
-        return array (  99 => 10,  94 => 8,  91 => 7,  81 => 6,  62 => 4,  51 => 2,  49 => 1,  36 => 2,);
+        return array (  104 => 12,  99 => 10,  94 => 8,  91 => 7,  81 => 6,  62 => 4,  51 => 2,  49 => 1,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -135,8 +140,10 @@ class __TwigTemplate_9a35d12a0175c424dfabe7d0fd8cde55 extends Template
 
 {% block body %}
 
-    <form action=\"{{ path('app_produit_new') }}\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to add this produit?')\">
+    <form action=\"{{ path('app_produit_new') }}\" method=\"post\" enctype=\"multipart/form-data\" onsubmit=\"return confirm('Are you sure you want to add this produit?')\">
  
+  <!-- <img id=\"popup-image\" src=\"{{ asset('uploads/' ~ produit.image) }}\" style=\"width: 100px; height: 100px;\" alt=\"\"/> -->
+
     {{ include('produit/_form.html.twig') }}
 
 </form>

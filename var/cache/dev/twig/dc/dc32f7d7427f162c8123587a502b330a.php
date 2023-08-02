@@ -92,7 +92,7 @@ class __TwigTemplate_0826269a13cbe8e0b7363be7244aaf77 extends Template
     <form action=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_coach_new");
-        echo "\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to add this coach?')\">
+        echo "\" method=\"post\" enctype=\"multipart/form-data\" >
  
     ";
         // line 10
@@ -135,7 +135,7 @@ class __TwigTemplate_0826269a13cbe8e0b7363be7244aaf77 extends Template
 
 {% block body %}
 
-    <form action=\"{{ path('app_coach_new') }}\" method=\"post\" onsubmit=\"return confirm('Are you sure you want to add this coach?')\">
+    <form action=\"{{ path('app_coach_new') }}\" method=\"post\" enctype=\"multipart/form-data\" >
  
     {{ include('coach/_form.html.twig') }}
 
